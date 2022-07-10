@@ -126,12 +126,12 @@ class BlockUserController extends StateNotifier<BlockUserState> {
           ref!.read(friendRequestsProvider.notifier).updateSuccessState(friendRequestsModel);
         }
 
-        FriendModel? friendSuggestionsModel = ref!.read(friendSuggestionsprovider.notifier).friendSuggestionsModel;
-        if (friendSuggestionsModel != null) {
-          int friendSuggestionsIndex = friendSuggestionsModel.data!.indexWhere(((element) => element.id == friendId));
-          if (friendSuggestionsIndex != -1) friendSuggestionsModel.data!.removeWhere((element) => element.id == friendId);
-          ref!.read(friendSuggestionsprovider.notifier).updateSuccessState(friendSuggestionsModel);
-        }
+        // FriendModel? friendSuggestionsModel = ref!.read(friendSuggestionsprovider.notifier).friendSuggestionsModel;
+        // if (friendSuggestionsModel != null) {
+        //   int friendSuggestionsIndex = friendSuggestionsModel.data!.indexWhere(((element) => element.id == friendId));
+        //   if (friendSuggestionsIndex != -1) friendSuggestionsModel.data!.removeWhere((element) => element.id == friendId);
+        //   ref!.read(friendSuggestionsprovider.notifier).updateSuccessState(friendSuggestionsModel);
+        // }
 
         ChatFriendsModel chatFriendsModel = ref!.read(chatFriendsProvider.notifier).chatFriendsModel!;
         if (chatFriendsModel != null) {

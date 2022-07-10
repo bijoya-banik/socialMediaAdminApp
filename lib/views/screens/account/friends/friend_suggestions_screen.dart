@@ -20,16 +20,16 @@ class FriendSuggestionsScreen extends ConsumerWidget {
     final friendSuggestionsScrollState = ref.watch(friendSuggestionsScrollProvider);
 
     
-       ref.listen(friendSuggestionsScrollProvider, (_, state) {
-          if (state is ScrollReachedBottomState) {
-            print('reached bottom');
-            ref.read(friendSuggestionsprovider.notifier).fetchMoreFriendSuggestions();
-          }
-        });
+      //  ref.listen(friendSuggestionsScrollProvider, (_, state) {
+      //     if (state is ScrollReachedBottomState) {
+      //       print('reached bottom');
+      //       ref.read(friendSuggestionsprovider.notifier).fetchMoreFriendSuggestions();
+      //     }
+      //   });
 
     return CupertinoPageScaffold(
       backgroundColor: KColor.darkAppBackground,
-      navigationBar: KCupertinoNavBar(title: 'Discover', automaticallyImplyLeading: false, hasLeading: true),
+      navigationBar: KCupertinoNavBar(title: 'User', automaticallyImplyLeading: false, hasLeading: true),
       child: friendSuggestionsState is FriendSuggestionsSuccessState
           ? CustomScrollView(
             controller: ref.read(friendSuggestionsScrollProvider.notifier).controller,
@@ -42,20 +42,20 @@ class FriendSuggestionsScreen extends ConsumerWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('People you may know', style: KTextStyle.headline5.copyWith(fontWeight: FontWeight.bold, color: KColor.black)),
+                     // Text('People you may know', style: KTextStyle.headline5.copyWith(fontWeight: FontWeight.bold, color: KColor.black)),
                       SizedBox(height: KSize.getHeight(context, 20)),
                       Column(
-                        children: List.generate(friendSuggestionsState.friendSuggestionsModel.data!.length, (index) {
+                        children: List.generate(friendSuggestionsState.friendSuggestionsModel.length, (index) {
                           return FriendsCard(
-                              type: FriendType.SUGGESTIONS, friendData: friendSuggestionsState.friendSuggestionsModel.data![index]);
+                              type: FriendType.SUGGESTIONS, friendData: friendSuggestionsState.friendSuggestionsModel[index]);
                         }),
                       ),
-                      if (friendSuggestionsScrollState is ScrollReachedBottomState)
-                        Container(
-                          alignment: Alignment.center,
-                          margin: const EdgeInsets.only(bottom: 15, top: 5),
-                          child: const CupertinoActivityIndicator(),
-                        ),
+                      // if (friendSuggestionsScrollState is ScrollReachedBottomState)
+                      //   Container(
+                      //     alignment: Alignment.center,
+                      //     margin: const EdgeInsets.only(bottom: 15, top: 5),
+                      //     child: const CupertinoActivityIndicator(),
+                      //   ),
                     ],
                   ),
                 ),

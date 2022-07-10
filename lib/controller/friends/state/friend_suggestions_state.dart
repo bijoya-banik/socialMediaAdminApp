@@ -10,7 +10,7 @@ class FriendSuggestionsLoadingState extends FriendSuggestionsState {
     const FriendSuggestionsLoadingState();
 }
 class FriendSuggestionsSuccessState extends FriendSuggestionsState {
-   final FriendModel friendSuggestionsModel;
+   final List<Datum> friendSuggestionsModel;
     const FriendSuggestionsSuccessState(this.friendSuggestionsModel);
 }
 class FriendSuggestionsErrorState extends FriendSuggestionsState {
