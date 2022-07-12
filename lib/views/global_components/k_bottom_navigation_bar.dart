@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:buddyscripts/constants/shared_preference_constant.dart';
 import 'package:buddyscripts/controller/friends/friend_suggestions_controller.dart';
 import 'package:buddyscripts/main.dart';
+import 'package:buddyscripts/report/report_controller.dart';
 import 'package:buddyscripts/services/app_mode.dart';
 import 'package:buddyscripts/views/screens/account/friends/friend_suggestions_screen.dart';
 import 'package:buddyscripts/views/screens/reports/report_screen.dart';
@@ -227,11 +228,11 @@ class _KBottomNavigationBarState extends ConsumerState<KBottomNavigationBar> wit
           }
         } 
         else if (_currentIndex == 1) {
-          /// reset message unseen counter on tap
-        //  ref.read(userProvider.notifier).updateMessageSeen();
+         ref.read(reportProvider.notifier).fetchReport();
         } else if (_currentIndex == 2) {
            ref.read(friendSuggestionsprovider.notifier).fetchFriendSuggestions();
         }
+       
           /// Reset notification counter on tap
          // ref.read(userProvider.notifier).updateNotificationCount();
 

@@ -4,6 +4,7 @@ import 'package:buddyscripts/controller/search/state/search_state.dart';
 import 'package:buddyscripts/views/global_components/k_content_unavailable_component.dart';
 import 'package:buddyscripts/views/global_components/loading_indicators/k_pages_loading_inidcator.dart';
 import 'package:buddyscripts/views/screens/account/components/friends_card.dart';
+import 'package:buddyscripts/views/screens/account/components/people_card.dart';
 import 'package:buddyscripts/views/styles/b_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -26,7 +27,7 @@ class PeopleSearchTab extends ConsumerWidget {
                     physics:const BouncingScrollPhysics(),
                     itemCount: searchState.response.length,
                     itemBuilder: (context, index) {
-                      return FriendsCard(type: FriendType.ALL, friendData: searchState.response[index]);
+                      return PeopleCard(type: FriendType.ALL, friendData: searchState.response[index]);
                     }),
               )
         : const KPagesLoadingIndicator();

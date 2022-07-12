@@ -22,7 +22,12 @@ class FeedDetailsController extends StateNotifier<FeedDetailsState> {
     try {
       responseBody = await Network.handleResponse(await Network.getRequest(API.feedDetails(id)));
       if (responseBody != null) {
-        feedDetailsModel = FeedModel.fromJson(responseBody[0]);
+        if(responseBody.isNotEmpty) {
+          feedDetailsModel = FeedModel.fromJson(responseBody[0]);
+        }
+        else{
+          feedDetailsModel =FeedModel(id: -1);
+        }
         state = FeedDetailsSuccessState(feedDetailsModel!);
       } else {
         state = const FeedDetailsErrorState();

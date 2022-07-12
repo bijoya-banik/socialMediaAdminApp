@@ -141,7 +141,9 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                               ),
                             ),
                             Container(
-                              color: KColor.textBackground,
+                            color: AppMode.darkMode
+                                                ? KColor.darkAppBackground
+                                                : KColor.appBackground,
                               child: Column(
                                 children: [
                                   SizedBox(height: KSize.getHeight(context, 7)),
@@ -153,6 +155,9 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                                   SizedBox(height: KSize.getHeight(context, 8)),
                                   Text(profileFeedData.basicOverView!.username ?? '', style: KTextStyle.bodyText3.copyWith(color: KColor.black87)),
                                   SizedBox(height: KSize.getHeight(context, 16)),
+                                    Text(profileFeedData.basicOverView!.email??"",
+                                    style: KTextStyle.bodyText3.copyWith(color: KColor.black87)),
+                                     SizedBox(height: KSize.getHeight(context, 16)),
                                   // Padding(
                                   //   padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 15),
                                   //   child: Row(

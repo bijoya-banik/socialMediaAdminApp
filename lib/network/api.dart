@@ -51,7 +51,8 @@ class API {
   //static const deleteFeed = 'feed/deleteFeed';
   static const deleteStoryFeed = 'feed/deleteStoryFeed';
   static const hideFeed = 'feed/hidePost';
-  static const worldFeed = 'feed/getFeed?feed_type=world';
+  static const getAllFeed = 'feed/getAllFeed';
+ // static const worldFeed = 'feed/getFeed?feed_type=world';
   static const personalFeed = 'feed/getFeed?feed_type=friends';
   static const statusShare = 'feed/getFeed?feed_type=friends';
 
@@ -89,7 +90,7 @@ class API {
   static pollOptionVoters({pollId, optionId, lastId = ''}) =>
       'voteoption/getVotedPeople?poll_id=$pollId&option_id=$optionId&more=$lastId';
 
-  // feed comments/comment replies
+  // feed comments/comment replies                   
   static feedComments(int id, {lastId}) =>
       'comment/getComment/$id?more=$lastId';
 

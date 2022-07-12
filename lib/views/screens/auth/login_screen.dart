@@ -160,20 +160,20 @@ class _LoginScreenState extends State<LoginScreen> {
                         },
                       );
                     }),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Text("Don't have an account?", style: KTextStyle.subtitle2.copyWith(color: KColor.black)),
-                        TextButton(
-                            onPressed: () {
-                              Navigator.push(context, CupertinoPageRoute(builder: (context) => const RegisterScreen()));
-                            },
-                            style: TextButton.styleFrom(
-                                primary: KColor.buttonBackground,
-                                textStyle: KTextStyle.subtitle2.copyWith(fontWeight: FontWeight.w700, color: KColor.buttonBackground)),
-                            child: const Text("Sign Up")),
-                      ],
-                    ),
+                    // Row(
+                    //   mainAxisAlignment: MainAxisAlignment.center,
+                    //   children: <Widget>[
+                    //     Text("Don't have an account?", style: KTextStyle.subtitle2.copyWith(color: KColor.black)),
+                    //     TextButton(
+                    //         onPressed: () {
+                    //           Navigator.push(context, CupertinoPageRoute(builder: (context) => const RegisterScreen()));
+                    //         },
+                    //         style: TextButton.styleFrom(
+                    //             primary: KColor.buttonBackground,
+                    //             textStyle: KTextStyle.subtitle2.copyWith(fontWeight: FontWeight.w700, color: KColor.buttonBackground)),
+                    //         child: const Text("Sign Up")),
+                    //   ],
+                    // ),
                     SizedBox(height: KSize.getHeight(context, 20)),
                   ],
                 ),

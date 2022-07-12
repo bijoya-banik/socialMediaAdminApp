@@ -8,10 +8,12 @@ import 'package:buddyscripts/controller/chat/conversations_controller.dart';
 import 'package:buddyscripts/controller/country/country_controller.dart';
 import 'package:buddyscripts/controller/feed/personal_feed_controller.dart';
 import 'package:buddyscripts/controller/feed/world_feed_controller.dart';
+import 'package:buddyscripts/controller/friends/friend_suggestions_controller.dart';
 import 'package:buddyscripts/controller/notifications/notification_controller.dart';
 import 'package:buddyscripts/controller/story/all_story_controller.dart';
 import 'package:buddyscripts/controller/story/story_controller.dart';
 import 'package:buddyscripts/main.dart';
+import 'package:buddyscripts/report/report_controller.dart';
 import 'package:buddyscripts/services/socket_service.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/scheduler.dart';
@@ -50,14 +52,10 @@ class InitDataController extends StateNotifier<Type> {
         }
       }
 
-      ref!.read(worldFeedProvider.notifier).fetchWorldFeed();
-      ref!.read(personalFeedProvider.notifier).fetchPersonalFeed();
-      ref!.read(conversationsProvider.notifier).fetchConversations();
-      ref!.read(chatFriendsProvider.notifier).fetchChatFriends();
-      ref!.read(storyProvider.notifier).fetchStory();
-      ref!.read(allstoryProvider.notifier).fetchAllStory();
-      ref!.read(notificationsProvider.notifier).fetchNotifications();
-      ref!.read(countryProvider.notifier).fetchCountries();
+       ref!.read(worldFeedProvider.notifier).fetchWorldFeed();
+        ref!.read(reportProvider.notifier).fetchReport();
+        ref!.read(friendSuggestionsprovider.notifier).fetchFriendSuggestions();
+     
 
       await Future.delayed(const Duration(seconds: 0));
       Brightness brightness = SchedulerBinding.instance!.window.platformBrightness;

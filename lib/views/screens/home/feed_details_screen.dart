@@ -29,7 +29,13 @@ class FeedDetailsScreen extends ConsumerWidget {
             children: [
               SizedBox(height: KSize.getHeight(context, 10)),
               feedDetailsState is FeedDetailsSuccessState
-                  ? FeedCard(
+                  ? feedDetailsState.feedModel.id==-1?
+                   Center(
+                     child: Container(
+                      margin: const EdgeInsets.only(top:300),
+                      child: const Text("Post is unavailable")),
+                   ):
+                  FeedCard(
                       feedData: feedDetailsState.feedModel,
                       onTapNavigate: false,
                       feedType: FeedType.DETAILS,

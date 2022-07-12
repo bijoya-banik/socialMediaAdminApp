@@ -31,7 +31,7 @@ class WorldFeedController extends StateNotifier<WorldFeedState> {
 
     dynamic responseBody;
     try {
-      responseBody = await Network.handleResponse(await Network.getRequest(API.worldFeed));
+      responseBody = await Network.handleResponse(await Network.getRequest(API.getAllFeed));
 
       if (responseBody != null) {
         worldFeedList = (responseBody as List<dynamic>).map((x) => FeedModel.fromJson(x)).toList();
@@ -52,7 +52,7 @@ class WorldFeedController extends StateNotifier<WorldFeedState> {
     if (feedModelInstance.length > 14) {
       feedModelInstance = [];
       try {
-        responseBody = await Network.handleResponse(await Network.getRequest(API.worldFeed + '&more=${worldFeedList.last.id}'));
+        responseBody = await Network.handleResponse(await Network.getRequest(API.getAllFeed + '&more=${worldFeedList.last.id}'));
 
         if (responseBody != null) {
           feedModelInstance = (responseBody as List<dynamic>).map((x) => FeedModel.fromJson(x)).toList();

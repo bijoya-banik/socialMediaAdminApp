@@ -11,7 +11,7 @@ class DateTimeService {
     // Format:
     // var utcFormat = DateFormat('yyyy-MM-ddTHH:mm:ssZ');
     var dateFormat = DateFormat('yyyy-MM-dd');
-    var customDateFormat = DateFormat('dd MMM');
+    var customDateFormat = DateFormat('dd-MM-yyyy');
     var longDateFormat = DateFormat("MMMM d, y ");
     var timeFormat = DateFormat('h:mm a');
 

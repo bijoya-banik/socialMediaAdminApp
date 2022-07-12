@@ -53,7 +53,7 @@ class _SearchScreenState extends ConsumerState<SearchScreen> with SingleTickerPr
         ref.read(searchProvider.notifier).resetSearchSuccessState();
       });
       if (searchController.text.isNotEmpty) {
-        _activeIndex == 1
+        _activeIndex == 1 
             ? ref.read(searchProvider.notifier).search(searchController.text, tab: 'people')
             // : _activeIndex == 2
             //     ? ref.read(searchProvider.notifier).search(searchController.text, tab: 'group')

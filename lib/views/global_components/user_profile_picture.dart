@@ -43,22 +43,22 @@ class UserProfilePicture extends ConsumerWidget {
       onTap: !onTapNavigate
           ? null
           : () {
-              if (type == 'page') {
-                ref.read(pageFeedProvider.notifier).fetchPageFeed(slug!);
-                Navigator.push(context, CupertinoPageRoute(builder: (context) => PageDetailsScreen()));
-              } else if (type == 'group') {
-                ref.read(groupFeedProvider.notifier).fetchGroupFeed(slug!);
-                Navigator.push(context, CupertinoPageRoute(builder: (context) => GroupDetailsScreen()));
-              } else if (type == 'event') {
-                ref.read(eventFeedProvider.notifier).fetchEventFeed(slug!);
-                Navigator.push(context, CupertinoPageRoute(builder: (context) => EventDetailsScreen()));
-              } else {
-                userId == getIntAsync(USER_ID)
-                    ? ref.read(myProfileFeedProvider.notifier).fetchProfileFeed(slug!)
-                    : ref.read(userProfileFeedProvider.notifier).fetchProfileFeed(slug!);
-                Navigator.push(context,
-                    CupertinoPageRoute(builder: (context) => userId == getIntAsync(USER_ID) ? const MyProfileScreen() : const UserProfileScreen()));
-              }
+              // if (type == 'page') {
+              //   ref.read(pageFeedProvider.notifier).fetchPageFeed(slug!);
+              //   Navigator.push(context, CupertinoPageRoute(builder: (context) => PageDetailsScreen()));
+              // } else if (type == 'group') {
+              //   ref.read(groupFeedProvider.notifier).fetchGroupFeed(slug!);
+              //   Navigator.push(context, CupertinoPageRoute(builder: (context) => GroupDetailsScreen()));
+              // } else if (type == 'event') {
+              //   ref.read(eventFeedProvider.notifier).fetchEventFeed(slug!);
+              //   Navigator.push(context, CupertinoPageRoute(builder: (context) => EventDetailsScreen()));
+              // } else {
+              //   userId == getIntAsync(USER_ID)
+              //       ? ref.read(myProfileFeedProvider.notifier).fetchProfileFeed(slug!)
+              //       : ref.read(userProfileFeedProvider.notifier).fetchProfileFeed(slug!);
+              //   Navigator.push(context,
+              //       CupertinoPageRoute(builder: (context) => userId == getIntAsync(USER_ID) ? const MyProfileScreen() : const UserProfileScreen()));
+              // }
             },
       child: Container(
         margin: EdgeInsets.only(right: rightPadding),
