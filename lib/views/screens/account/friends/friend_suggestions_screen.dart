@@ -29,7 +29,7 @@ class FriendSuggestionsScreen extends ConsumerWidget {
 
     return CupertinoPageScaffold(
       backgroundColor: KColor.darkAppBackground,
-      navigationBar: KCupertinoNavBar(title: 'User', automaticallyImplyLeading: false, hasLeading: true),
+      navigationBar: KCupertinoNavBar(title: 'User', automaticallyImplyLeading: false, hasLeading: false),
       child: friendSuggestionsState is FriendSuggestionsSuccessState
           ? CustomScrollView(
             controller: ref.read(friendSuggestionsScrollProvider.notifier).controller,

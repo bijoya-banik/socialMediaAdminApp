@@ -1,4 +1,4 @@
-package com.buddyscripts.buddyscripts
+package com.admin.buddyscripts
 
 import io.flutter.embedding.android.FlutterActivity
 

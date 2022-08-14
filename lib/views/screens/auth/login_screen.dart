@@ -69,7 +69,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     SizedBox(height: KSize.getHeight(context, 25)),
                     Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                       Text(
-                        "Log in",
+                        "Admin Log in",
                         style: KTextStyle.headline5.copyWith(color: KColor.black),
                       ),
                       const SizedBox(height: 10),

@@ -149,7 +149,9 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                                   SizedBox(height: KSize.getHeight(context, 7)),
                                   UserName(
                                       onTapNavigate: false,
-                                      backgroundColor: KColor.appBackground,
+                                      backgroundColor: AppMode.darkMode
+                                                ? KColor.darkAppBackground
+                                                : KColor.appBackground,
                                       name: '${profileFeedData.basicOverView!.firstName} ${profileFeedData.basicOverView!.lastName}',
                                       textStyle: KTextStyle.headline4.copyWith(fontWeight: FontWeight.w700, color: KColor.black)),
                                   SizedBox(height: KSize.getHeight(context, 8)),

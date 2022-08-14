@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.buddyscripts.buddyscripts</string>
+	<string>com.admin.buddyscripts</string>
 	<key>PROJECT_ID</key>
 	<string>buddyscript-551b1</string>
 	<key>STORAGE_BUCKET</key>

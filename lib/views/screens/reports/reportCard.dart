@@ -37,7 +37,7 @@ class _ReportCardState extends ConsumerState<ReportCard> {
     return Column(
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 10),
+                padding: const EdgeInsets.symmetric(vertical: 15),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -59,7 +59,7 @@ class _ReportCardState extends ConsumerState<ReportCard> {
                                             child: Text(widget.reportData.text ?? "",
                                                 style: KTextStyle.subtitle1.copyWith(
                                                     color: KColor.black87,
-                                                    fontWeight: FontWeight.w600))),
+                                                    fontWeight: FontWeight.normal))),
                                       ],
                                     ),
                                     SizedBox(height: KSize.getHeight(context, 3)),
@@ -95,12 +95,15 @@ class _ReportCardState extends ConsumerState<ReportCard> {
                       ],
                     ),
                     const SizedBox(height: 4),
+                    Text("Feed Id : ${widget.reportData.feedId}",
+                      style: TextStyle(color: KColor.grey800)),
+                       const SizedBox(height: 6),
                     Text("Created At : ${DateTimeService.convert(widget.reportData.createdAt,isCustomDateFormat:true)}",
                       style: TextStyle(color: KColor.grey800)),
                        const SizedBox(height: 6),
                     InkWell(
                       onTap: (){
-                        ref.read(feedDetailsProvider.notifier).fetchFeedDetails(widget.reportData.id!);
+                        ref.read(feedDetailsProvider.notifier).fetchFeedDetails(widget.reportData.feedId!);
           Navigator.of(context, rootNavigator: true).push((CupertinoPageRoute(builder: (context) => const FeedDetailsScreen())));
                       },
                       child: Text("See Post Details>",
